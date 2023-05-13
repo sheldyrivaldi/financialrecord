@@ -20,5 +20,5 @@ func main() {
 	routes.TransactionRoutes(e)
 	routes.ReportsRoutes(e)
 
-	e.Start(":3000")
+	e.Start(":8080")
 }

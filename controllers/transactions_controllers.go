@@ -1,9 +1,7 @@
 package controllers
 
 import (
-	"log"
 	"net/http"
-	"os"
 	"prakerja/configs"
 	"prakerja/models"
 	"strconv"
@@ -11,7 +9,6 @@ import (
 	"time"
 
 	"github.com/dgrijalva/jwt-go"
-	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
 )
 
@@ -48,11 +45,6 @@ func AdminGetTransactionsByTransactionId(c echo.Context) error {
 }
 
 func UserGetTransactions(c echo.Context) error {
-	errEnv := godotenv.Load()
-	if errEnv != nil {
-		log.Fatal("Error loading .env file")
-	}
-
 	// Get JWT token from request header
 	authToken := c.Request().Header.Get("Authorization")
 	splitString := strings.Split(authToken, "Bearer ")
@@ -60,7 +52,7 @@ func UserGetTransactions(c echo.Context) error {
 
 	// Parse JWT token
 	token, _ := jwt.ParseWithClaims(tokenString, &models.Claims{}, func(token *jwt.Token) (interface{}, error) {
-		return []byte(os.Getenv("JWT_KEY")), nil
+		return []byte("YoUr-SeCreT-KeY"), nil
 	})
 	claims, _ := token.Claims.(*models.Claims)
 
@@ -82,7 +74,7 @@ func UserGetTransactionByTransactionId(c echo.Context) error {
 
 	// Parse JWT token
 	token, _ := jwt.ParseWithClaims(tokenString, &models.Claims{}, func(token *jwt.Token) (interface{}, error) {
-		return []byte(os.Getenv("JWT_KEY")), nil
+		return []byte("YoUr-SeCreT-KeY"), nil
 	})
 	claims, _ := token.Claims.(*models.Claims)
 
@@ -106,7 +98,7 @@ func UserCreateTransaction(c echo.Context) error {
 
 	// Parse JWT token
 	token, _ := jwt.ParseWithClaims(tokenString, &models.Claims{}, func(token *jwt.Token) (interface{}, error) {
-		return []byte(os.Getenv("JWT_KEY")), nil
+		return []byte("YoUr-SeCreT-KeY"), nil
 	})
 	claims, _ := token.Claims.(*models.Claims)
 
@@ -195,7 +187,7 @@ func UserDeleteTransactionByTransactionId(c echo.Context) error {
 
 	// Parse JWT token
 	token, _ := jwt.ParseWithClaims(tokenString, &models.Claims{}, func(token *jwt.Token) (interface{}, error) {
-		return []byte(os.Getenv("JWT_KEY")), nil
+		return []byte("YoUr-SeCreT-KeY"), nil
 	})
 	claims, _ := token.Claims.(*models.Claims)
 

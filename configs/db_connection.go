@@ -1,21 +1,12 @@
 package configs
 
 import (
-	"log"
-	"os"
-
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
-
-	"github.com/joho/godotenv"
 )
 
 func ConnectDatabase() {
-	errEnv := godotenv.Load()
-	if errEnv != nil {
-		log.Fatal("Error loading .env file")
-	}
-	dsn := os.Getenv("DB_DSN")
+	dsn := "4g4l823idwofed3o60db:pscale_pw_3auHMq5Beinpg72rQiXDdsrXrtPfRKj5egFXbnWhy5g@tcp(aws.connect.psdb.cloud)/finrecords?tls=true"
 
 	var err error
 	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})

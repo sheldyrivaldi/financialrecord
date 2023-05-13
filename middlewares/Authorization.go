@@ -1,24 +1,16 @@
 package middlewares
 
 import (
-	"log"
 	"net/http"
-	"os"
 	"prakerja/models"
 	"strings"
 
 	"github.com/dgrijalva/jwt-go"
-	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
 )
 
 func AdminAuthMiddleware(next echo.HandlerFunc) echo.HandlerFunc {
 	return func(c echo.Context) error {
-		errEnv := godotenv.Load()
-		if errEnv != nil {
-			log.Fatal("Error loading .env file")
-		}
-
 		// Get JWT token from request header
 		authToken := c.Request().Header.Get("Authorization")
 		if authToken == "" {
@@ -28,7 +20,7 @@ func AdminAuthMiddleware(next echo.HandlerFunc) echo.HandlerFunc {
 		tokenString := splitString[1]
 
 		// Parse JWT token
-		JWT_KEY := os.Getenv("JWT_KEY")
+		JWT_KEY := "YoUr-SeCreT-KeY"
 		token, err := jwt.ParseWithClaims(tokenString, &models.Claims{}, func(token *jwt.Token) (interface{}, error) {
 			return []byte(JWT_KEY), nil
 		})
@@ -60,7 +52,7 @@ func UserAuthMiddleware(next echo.HandlerFunc) echo.HandlerFunc {
 		tokenString := splitString[1]
 
 		// Parse JWT token
-		JWT_KEY := os.Getenv("JWT_KEY")
+		JWT_KEY := "YoUr-SeCreT-KeY"
 		token, err := jwt.ParseWithClaims(tokenString, &models.Claims{}, func(token *jwt.Token) (interface{}, error) {
 			return []byte(JWT_KEY), nil
 		})
