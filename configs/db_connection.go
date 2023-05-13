@@ -6,7 +6,7 @@ import (
 )
 
 func ConnectDatabase() {
-	dsn := "4g4l823idwofed3o60db:pscale_pw_3auHMq5Beinpg72rQiXDdsrXrtPfRKj5egFXbnWhy5g@tcp(aws.connect.psdb.cloud)/finrecords?tls=true"
+	dsn := "root:VDXdZxHQu7G9on1DGjMk@tcp(containers-us-west-168.railway.app:7498)/railway?charset=utf8mb4&parseTime=True&loc=Local"
 
 	var err error
 	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
