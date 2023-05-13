@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"prakerja/configs"
 	"prakerja/routes"
 
@@ -20,5 +21,10 @@ func main() {
 	routes.TransactionRoutes(e)
 	routes.ReportsRoutes(e)
 
-	e.Start(":8080")
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
+	e.Start(":" + port)
 }
