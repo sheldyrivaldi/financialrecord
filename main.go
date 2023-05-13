@@ -21,10 +21,5 @@ func main() {
 	routes.TransactionRoutes(e)
 	routes.ReportsRoutes(e)
 
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "8080"
-	}
-
-	e.Start(":" + port)
+	e.Logger.Fatal(e.Start(":" + os.Getenv("PORT")))
 }
