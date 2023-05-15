@@ -1,0 +1,1422 @@
+{
+	"info": {
+		"_postman_id": "a6bcdd99-88c1-4773-8839-0ad9b9dda10f",
+		"name": "Financial Records",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23649575"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register & Login",
+					"item": [
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"role\": \"user\",\n    \"username\": \"sheldyrivaldi\",\n    \"email\": \"sheldyrivaldi@gmail.com\",\n    \"password\": \"sheldy\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://financialrecord-production-03ed.up.railway.app/register",
+									"protocol": "https",
+									"host": [
+										"financialrecord-production-03ed",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Register",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"role\": \"user\",\n    \"username\": \"sheldyrivaldi\",\n    \"email\": \"sheldyrivaldi@gmail.com\",\n    \"password\": \"sheldy\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://financialrecord-production-03ed.up.railway.app/register",
+											"protocol": "https",
+											"host": [
+												"financialrecord-production-03ed",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"register"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "date",
+											"value": "Sat, 13 May 2023 08:32:36 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "159"
+										},
+										{
+											"key": "server",
+											"value": "railway"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": 3,\n        \"role\": \"user\",\n        \"balance\": 0,\n        \"username\": \"sheldyrivaldi\",\n        \"email\": \"sheldyrivaldi@gmail.com\",\n        \"password\": \"sheldy\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"sheldyrivaldi@gmail.com\",\n    \"password\": \"sheldy\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://financialrecord-production-03ed.up.railway.app/login",
+									"protocol": "https",
+									"host": [
+										"financialrecord-production-03ed",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Login",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"sheldyrivaldi@gmail.com\",\n    \"password\": \"sheldy\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://financialrecord-production-03ed.up.railway.app/login",
+											"protocol": "https",
+											"host": [
+												"financialrecord-production-03ed",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "date",
+											"value": "Sat, 13 May 2023 08:37:39 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "230"
+										},
+										{
+											"key": "server",
+											"value": "railway"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"message\": \"User successfully login!\",\n    \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJ1c2VybmFtZSI6IiIsImVtYWlsIjoiIiwiZXhwIjoxNjg0MDUzNDU5fQ.69v0lhSt69bOtcX9SsjhbzSwKStYN_AtwiC2GN84Do8\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Proflle",
+					"item": [
+						{
+							"name": "Get User Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJ1c2VybmFtZSI6IiIsImVtYWlsIjoiIiwiZXhwIjoxNjg0MDUzNDU5fQ.69v0lhSt69bOtcX9SsjhbzSwKStYN_AtwiC2GN84Do8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://financialrecord-production-03ed.up.railway.app/user/profile",
+									"protocol": "https",
+									"host": [
+										"financialrecord-production-03ed",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"user",
+										"profile"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get User Profile",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://financialrecord-production-03ed.up.railway.app/user/profile",
+											"protocol": "https",
+											"host": [
+												"financialrecord-production-03ed",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"user",
+												"profile"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "date",
+											"value": "Sat, 13 May 2023 08:40:23 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "161"
+										},
+										{
+											"key": "server",
+											"value": "railway"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 3,\n            \"role\": \"user\",\n            \"balance\": 0,\n            \"username\": \"sheldyrivaldi\",\n            \"email\": \"sheldyrivaldi@gmail.com\",\n            \"password\": \"sheldy\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Update User Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJ1c2VybmFtZSI6IiIsImVtYWlsIjoiIiwiZXhwIjoxNjg0MDUzNDU5fQ.69v0lhSt69bOtcX9SsjhbzSwKStYN_AtwiC2GN84Do8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"sheldyaja\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://financialrecord-production-03ed.up.railway.app/user/profile",
+									"protocol": "https",
+									"host": [
+										"financialrecord-production-03ed",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"user",
+										"profile"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update User Profile",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"username\": \"sheldyaja\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://financialrecord-production-03ed.up.railway.app/user/profile",
+											"protocol": "https",
+											"host": [
+												"financialrecord-production-03ed",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"user",
+												"profile"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "date",
+											"value": "Sat, 13 May 2023 08:45:13 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "168"
+										},
+										{
+											"key": "server",
+											"value": "railway"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"message\": \"Updated successfully\",\n    \"data\": {\n        \"id\": 3,\n        \"role\": \"user\",\n        \"balance\": 0,\n        \"username\": \"sheldyaja\",\n        \"email\": \"sheldyrivaldi@gmail.com\",\n        \"password\": \"sheldy\"\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Income Categories",
+					"item": [
+						{
+							"name": "Create Income Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJ1c2VybmFtZSI6IiIsImVtYWlsIjoiIiwiZXhwIjoxNjg0MDUzNDU5fQ.69v0lhSt69bOtcX9SsjhbzSwKStYN_AtwiC2GN84Do8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"category\": \"Gaji\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://financialrecord-production-03ed.up.railway.app/user/categories/income",
+									"protocol": "https",
+									"host": [
+										"financialrecord-production-03ed",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"user",
+										"categories",
+										"income"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create Income Category",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"category\": \"Gaji\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://financialrecord-production-03ed.up.railway.app/user/categories/income",
+											"protocol": "https",
+											"host": [
+												"financialrecord-production-03ed",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"user",
+												"categories",
+												"income"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "date",
+											"value": "Sat, 13 May 2023 08:51:20 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "82"
+										},
+										{
+											"key": "server",
+											"value": "railway"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": 1,\n        \"user_id\": 3,\n        \"category\": \"Gaji\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Categories",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJ1c2VybmFtZSI6IiIsImVtYWlsIjoiIiwiZXhwIjoxNjg0MDUzNDU5fQ.69v0lhSt69bOtcX9SsjhbzSwKStYN_AtwiC2GN84Do8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://financialrecord-production-03ed.up.railway.app/user/categories/income",
+									"protocol": "https",
+									"host": [
+										"financialrecord-production-03ed",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"user",
+										"categories",
+										"income"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Categories",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "https://financialrecord-production-03ed.up.railway.app/user/categories/income",
+											"protocol": "https",
+											"host": [
+												"financialrecord-production-03ed",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"user",
+												"categories",
+												"income"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "date",
+											"value": "Sat, 13 May 2023 08:52:47 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "84"
+										},
+										{
+											"key": "server",
+											"value": "railway"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 3,\n            \"category\": \"Gaji\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Income Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJ1c2VybmFtZSI6IiIsImVtYWlsIjoiIiwiZXhwIjoxNjg0MDUzNDU5fQ.69v0lhSt69bOtcX9SsjhbzSwKStYN_AtwiC2GN84Do8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"category\": \"Bonus\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://financialrecord-production-03ed.up.railway.app/user/categories/income/1",
+									"protocol": "https",
+									"host": [
+										"financialrecord-production-03ed",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"user",
+										"categories",
+										"income",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update Income Category",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"category\": \"Bonus\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://financialrecord-production-03ed.up.railway.app/user/categories/income/1",
+											"protocol": "https",
+											"host": [
+												"financialrecord-production-03ed",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"user",
+												"categories",
+												"income",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "date",
+											"value": "Sat, 13 May 2023 08:57:49 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "105"
+										},
+										{
+											"key": "server",
+											"value": "railway"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"message\": \"Category updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"user_id\": 3,\n        \"category\": \"Bonus\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Income Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJ1c2VybmFtZSI6IiIsImVtYWlsIjoiIiwiZXhwIjoxNjg0MDUzNDU5fQ.69v0lhSt69bOtcX9SsjhbzSwKStYN_AtwiC2GN84Do8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://financialrecord-production-03ed.up.railway.app/user/categories/income/1",
+									"protocol": "https",
+									"host": [
+										"financialrecord-production-03ed",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"user",
+										"categories",
+										"income",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete Income Category",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://financialrecord-production-03ed.up.railway.app/user/categories/income/1",
+											"protocol": "https",
+											"host": [
+												"financialrecord-production-03ed",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"user",
+												"categories",
+												"income",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "date",
+											"value": "Sat, 13 May 2023 08:59:49 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "105"
+										},
+										{
+											"key": "server",
+											"value": "railway"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"message\": \"Category deleted successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"user_id\": 3,\n        \"category\": \"Bonus\"\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Expense Categories",
+					"item": [
+						{
+							"name": "Create Expense Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJ1c2VybmFtZSI6IiIsImVtYWlsIjoiIiwiZXhwIjoxNjg0MDUzNDU5fQ.69v0lhSt69bOtcX9SsjhbzSwKStYN_AtwiC2GN84Do8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"category\": \"Makanan\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://financialrecord-production-03ed.up.railway.app/user/categories/expense",
+									"protocol": "https",
+									"host": [
+										"financialrecord-production-03ed",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"user",
+										"categories",
+										"expense"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create Expense Category",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"category\": \"Makanan\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://financialrecord-production-03ed.up.railway.app/user/categories/expense",
+											"protocol": "https",
+											"host": [
+												"financialrecord-production-03ed",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"user",
+												"categories",
+												"expense"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "date",
+											"value": "Sat, 13 May 2023 09:02:37 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "85"
+										},
+										{
+											"key": "server",
+											"value": "railway"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": 1,\n        \"user_id\": 3,\n        \"category\": \"Makanan\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Expense Categories",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": [
+								{
+									"name": "Get Expense Categories",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://financialrecord-production-03ed.up.railway.app/user/categories/expensevvv        ",
+											"protocol": "https",
+											"host": [
+												"financialrecord-production-03ed",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"user",
+												"categories",
+												"expensevvv        "
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "date",
+											"value": "Sat, 13 May 2023 09:40:37 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "87"
+										},
+										{
+											"key": "server",
+											"value": "railway"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 3,\n            \"category\": \"Makanan\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Expense Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJ1c2VybmFtZSI6IiIsImVtYWlsIjoiIiwiZXhwIjoxNjg0MDUzNDU5fQ.69v0lhSt69bOtcX9SsjhbzSwKStYN_AtwiC2GN84Do8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"category\": \"Transportasi\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://financialrecord-production-03ed.up.railway.app/user/categories/expense/1",
+									"protocol": "https",
+									"host": [
+										"financialrecord-production-03ed",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"user",
+										"categories",
+										"expense",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Update Expense Category",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"category\": \"Transportasi\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://financialrecord-production-03ed.up.railway.app/user/categories/expense/1",
+											"protocol": "https",
+											"host": [
+												"financialrecord-production-03ed",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"user",
+												"categories",
+												"expense",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "date",
+											"value": "Sat, 13 May 2023 09:47:05 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "112"
+										},
+										{
+											"key": "server",
+											"value": "railway"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"message\": \"Category updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"user_id\": 3,\n        \"category\": \"Transportasi\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJ1c2VybmFtZSI6IiIsImVtYWlsIjoiIiwiZXhwIjoxNjg0MDUzNDU5fQ.69v0lhSt69bOtcX9SsjhbzSwKStYN_AtwiC2GN84Do8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://financialrecord-production-03ed.up.railway.app/user/categories/expense/1",
+									"protocol": "https",
+									"host": [
+										"financialrecord-production-03ed",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"user",
+										"categories",
+										"expense",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://financialrecord-production-03ed.up.railway.app/user/categories/expense/1",
+											"protocol": "https",
+											"host": [
+												"financialrecord-production-03ed",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"user",
+												"categories",
+												"expense",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "date",
+											"value": "Sat, 13 May 2023 09:48:38 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "112"
+										},
+										{
+											"key": "server",
+											"value": "railway"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"message\": \"Category deleted successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"user_id\": 3,\n        \"category\": \"Transportasi\"\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Transactions",
+					"item": [
+						{
+							"name": "Create Transaction",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJ1c2VybmFtZSI6IiIsImVtYWlsIjoiIiwiZXhwIjoxNjg0MDUzNDU5fQ.69v0lhSt69bOtcX9SsjhbzSwKStYN_AtwiC2GN84Do8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"income\",\n    \"category\": \"Gaji\",\n    \"amount\": 1000000,\n    \"note\": \"Gajian bulan januari\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://financialrecord-production-03ed.up.railway.app/user/transactions",
+									"protocol": "https",
+									"host": [
+										"financialrecord-production-03ed",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"user",
+										"transactions"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create Transaction",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"type\": \"income\",\n    \"category\": \"Gaji\",\n    \"amount\": 1000000,\n    \"note\": \"Gajian bulan januari\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://financialrecord-production-03ed.up.railway.app/user/transactions",
+											"protocol": "https",
+											"host": [
+												"financialrecord-production-03ed",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"user",
+												"transactions"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "date",
+											"value": "Sat, 13 May 2023 09:52:57 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "180"
+										},
+										{
+											"key": "server",
+											"value": "railway"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"message\": \"Transaction successful\",\n    \"data\": {\n        \"id\": 1,\n        \"user_id\": 3,\n        \"date\": \"13-05-2023\",\n        \"type\": \"income\",\n        \"category\": \"Gaji\",\n        \"amount\": 1000000,\n        \"note\": \"Gajian bulan januari\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Transactions",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJ1c2VybmFtZSI6IiIsImVtYWlsIjoiIiwiZXhwIjoxNjg0MDUzNDU5fQ.69v0lhSt69bOtcX9SsjhbzSwKStYN_AtwiC2GN84Do8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://financialrecord-production-03ed.up.railway.app/user/transactions",
+									"protocol": "https",
+									"host": [
+										"financialrecord-production-03ed",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"user",
+										"transactions"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Transactions",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://financialrecord-production-03ed.up.railway.app/user/transactions",
+											"protocol": "https",
+											"host": [
+												"financialrecord-production-03ed",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"user",
+												"transactions"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "date",
+											"value": "Sat, 13 May 2023 09:54:56 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "167"
+										},
+										{
+											"key": "server",
+											"value": "railway"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 3,\n            \"date\": \"13-05-2023\",\n            \"type\": \"income\",\n            \"category\": \"Gaji\",\n            \"amount\": 1000000,\n            \"note\": \"Gajian bulan januari\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Transaction",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJ1c2VybmFtZSI6IiIsImVtYWlsIjoiIiwiZXhwIjoxNjg0MDUzNDU5fQ.69v0lhSt69bOtcX9SsjhbzSwKStYN_AtwiC2GN84Do8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://financialrecord-production-03ed.up.railway.app/user/transactions/1",
+									"protocol": "https",
+									"host": [
+										"financialrecord-production-03ed",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"user",
+										"transactions",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Delete Transaction",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://financialrecord-production-03ed.up.railway.app/user/transactions/1",
+											"protocol": "https",
+											"host": [
+												"financialrecord-production-03ed",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"user",
+												"transactions",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "date",
+											"value": "Sat, 13 May 2023 09:56:36 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "35"
+										},
+										{
+											"key": "server",
+											"value": "railway"
+										}
+									],
+									"cookie": [],
+									"body": "\"Transaction deleted successfully\""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Reports",
+					"item": [
+						{
+							"name": "Get Reports",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6InVzZXIiLCJ1c2VybmFtZSI6IiIsImVtYWlsIjoiIiwiZXhwIjoxNjg0MDUzNDU5fQ.69v0lhSt69bOtcX9SsjhbzSwKStYN_AtwiC2GN84Do8",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://financialrecord-production-03ed.up.railway.app/user/reports",
+									"protocol": "https",
+									"host": [
+										"financialrecord-production-03ed",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"user",
+										"reports"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Reports",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://financialrecord-production-03ed.up.railway.app/user/reports",
+											"protocol": "https",
+											"host": [
+												"financialrecord-production-03ed",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"user",
+												"reports"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "content-type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "date",
+											"value": "Sat, 13 May 2023 10:00:03 GMT"
+										},
+										{
+											"key": "content-length",
+											"value": "73"
+										},
+										{
+											"key": "server",
+											"value": "railway"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"totalExpenses\": 0,\n    \"totalIncome\": 0,\n    \"difference\": 0,\n    \"categoryReport\": null\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
